@@ -159,14 +159,16 @@ section{padding:52px 24px}
 
 /* PROCESO */
 .process{background:var(--bg)}
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative;margin-bottom:48px}
-.steps::before{content:'';position:absolute;top:27px;left:calc(10% + 14px);right:calc(10% + 14px);height:2px;background:linear-gradient(90deg,var(--azul),var(--azul2));z-index:0;opacity:0.25}
-.step{text-align:center;position:relative;z-index:1}
-.step-num{width:56px;height:56px;border-radius:50%;background:var(--azul);color:white;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:4px solid white;box-shadow:0 6px 20px rgba(26,79,160,0.35)}
-.step-icon{font-size:22px;margin-bottom:6px;display:block}
-.step-title{font-size:14px;font-weight:800;margin-bottom:6px;color:var(--texto)}
-.step-text{font-size:13px;color:var(--texto2);line-height:1.55}
-.process-note{background:white;border:1px solid var(--borde);border-radius:16px;padding:22px 32px;display:inline-flex;gap:16px;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,0.04)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.step{display:flex;align-items:flex-start;gap:14px;background:white;border:1px solid var(--borde);border-radius:14px;padding:18px 20px;text-align:left;transition:box-shadow 0.2s,transform 0.2s;position:relative;overflow:hidden}
+.step::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--azul),var(--azul2));border-radius:0}
+.step:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);transform:translateY(-2px)}
+.step-num{width:40px;height:40px;border-radius:10px;background:var(--azul);color:white;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(26,79,160,0.3)}
+.step-content{flex:1;min-width:0}
+.step-icon{font-size:17px;margin-bottom:2px;display:block}
+.step-title{font-size:14px;font-weight:800;margin-bottom:4px;color:var(--texto)}
+.step-text{font-size:12px;color:var(--texto2);line-height:1.5}
+.process-note{background:white;border:1px solid var(--borde);border-radius:14px;padding:16px 24px;display:inline-flex;gap:14px;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,0.04)}
 
 /* CALCULADORA */
 .calc-section{background:white}
@@ -287,8 +289,7 @@ span[data-lang="en"]{display:none}
   .hero-card{display:none}
   .about-grid{grid-template-columns:1fr}
   .projects-grid{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr;gap:24px}
-  .steps::before{display:none}
+  .steps{grid-template-columns:repeat(2,1fr);gap:10px}
   .zones-grid{grid-template-columns:1fr 1fr}
   .footer-top{grid-template-columns:1fr}
   .nav-links{display:none}
@@ -311,6 +312,7 @@ span[data-lang="en"]{display:none}
   .calc-amount{font-size:40px!important}
   .announce-bar p{font-size:12px}
   .trust-dot{display:none}
+  .steps{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -817,43 +819,53 @@ span[data-lang="en"]{display:none}
     <div class="steps">
       <div class="step fade-up">
         <div class="step-num">1</div>
-        <span class="step-icon">🏦</span>
-        <div class="step-title" data-lang="es">Pre-aprobación</div>
-        <div class="step-title" data-lang="en">Pre-approval</div>
-        <div class="step-text" data-lang="es">Te conecto con el prestamista correcto y evaluamos tu calificación sin compromiso</div>
-        <div class="step-text" data-lang="en">I connect you with the right lender and we evaluate your qualification with no commitment</div>
+        <div class="step-content">
+          <span class="step-icon">🏦</span>
+          <div class="step-title" data-lang="es">Pre-aprobación</div>
+          <div class="step-title" data-lang="en">Pre-approval</div>
+          <div class="step-text" data-lang="es">Te conecto con el prestamista correcto y evaluamos tu calificación sin compromiso</div>
+          <div class="step-text" data-lang="en">I connect you with the right lender and evaluate your qualification with no commitment</div>
+        </div>
       </div>
       <div class="step fade-up fade-up-delay-1">
         <div class="step-num">2</div>
-        <span class="step-icon">🔍</span>
-        <div class="step-title" data-lang="es">Selección</div>
-        <div class="step-title" data-lang="en">Selection</div>
-        <div class="step-text" data-lang="es">Te muestro las mejores opciones de DR Horton y Lennar según tu presupuesto</div>
-        <div class="step-text" data-lang="en">I show you the best DR Horton and Lennar options according to your budget</div>
+        <div class="step-content">
+          <span class="step-icon">🔍</span>
+          <div class="step-title" data-lang="es">Selección</div>
+          <div class="step-title" data-lang="en">Selection</div>
+          <div class="step-text" data-lang="es">Te muestro las mejores opciones de DR Horton y Lennar según tu presupuesto</div>
+          <div class="step-text" data-lang="en">I show you the best DR Horton and Lennar options for your budget</div>
+        </div>
       </div>
       <div class="step fade-up fade-up-delay-2">
         <div class="step-num">3</div>
-        <span class="step-icon">🤝</span>
-        <div class="step-title" data-lang="es">Oferta</div>
-        <div class="step-title" data-lang="en">Offer</div>
-        <div class="step-text" data-lang="es">Negocio por ti para obtener los mejores incentivos disponibles</div>
-        <div class="step-text" data-lang="en">I negotiate for you to get the best incentives available</div>
+        <div class="step-content">
+          <span class="step-icon">🤝</span>
+          <div class="step-title" data-lang="es">Oferta</div>
+          <div class="step-title" data-lang="en">Offer</div>
+          <div class="step-text" data-lang="es">Negocio por ti para obtener los mejores incentivos disponibles</div>
+          <div class="step-text" data-lang="en">I negotiate for you to get the best available incentives</div>
+        </div>
       </div>
       <div class="step fade-up fade-up-delay-3">
         <div class="step-num">4</div>
-        <span class="step-icon">📋</span>
-        <div class="step-title" data-lang="es">Inspección y cierre</div>
-        <div class="step-title" data-lang="en">Inspection & closing</div>
-        <div class="step-text" data-lang="es">Revisamos cada documento juntos. No firmas nada que no entiendas</div>
-        <div class="step-text" data-lang="en">We review every document together. You don't sign anything you don't understand</div>
+        <div class="step-content">
+          <span class="step-icon">📋</span>
+          <div class="step-title" data-lang="es">Inspección y cierre</div>
+          <div class="step-title" data-lang="en">Inspection & closing</div>
+          <div class="step-text" data-lang="es">Revisamos cada documento juntos. No firmas nada que no entiendas</div>
+          <div class="step-text" data-lang="en">We review every document together. You don't sign anything you don't understand</div>
+        </div>
       </div>
       <div class="step fade-up fade-up-delay-4">
         <div class="step-num">5</div>
-        <span class="step-icon">🔑</span>
-        <div class="step-title" data-lang="es">¡Llaves en mano!</div>
-        <div class="step-title" data-lang="en">Keys in hand!</div>
-        <div class="step-text" data-lang="es">Recibes las llaves de tu primera casa. Bienvenido a ser dueño</div>
-        <div class="step-text" data-lang="en">You receive the keys to your first home. Welcome to homeownership</div>
+        <div class="step-content">
+          <span class="step-icon">🔑</span>
+          <div class="step-title" data-lang="es">¡Llaves en mano!</div>
+          <div class="step-title" data-lang="en">Keys in hand!</div>
+          <div class="step-text" data-lang="es">Recibes las llaves de tu primera casa. Bienvenido a ser dueño</div>
+          <div class="step-text" data-lang="en">You receive the keys to your first home. Welcome to homeownership</div>
+        </div>
       </div>
     </div>
     <div style="text-align:center">
