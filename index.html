@@ -254,6 +254,32 @@ span[data-lang="en"]{display:none}
 .wa-float:hover{transform:scale(1.1)}
 .wa-float svg{width:32px;height:32px;fill:white}
 
+/* COMUNIDADES DESTACADAS */
+.featured-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.featured-card{border-radius:20px;overflow:hidden;border:1px solid var(--borde);transition:transform 0.25s,box-shadow 0.25s;background:white}
+.featured-card:hover{transform:translateY(-6px);box-shadow:0 28px 70px rgba(0,0,0,0.13)}
+.featured-img-wrap{position:relative;overflow:hidden;height:260px}
+.featured-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;display:block}
+.featured-card:hover .featured-img-wrap img{transform:scale(1.05)}
+.featured-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,0.55) 100%)}
+.featured-builder-badge{position:absolute;top:16px;left:16px;background:white;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:800;color:var(--azul);box-shadow:0 4px 14px rgba(0,0,0,0.18)}
+.featured-price-badge{position:absolute;bottom:16px;right:16px;background:var(--azul);color:white;border-radius:10px;padding:8px 16px;text-align:right;box-shadow:0 4px 14px rgba(26,79,160,0.45)}
+.featured-price-label{font-size:10px;opacity:0.75;display:block;text-transform:uppercase;letter-spacing:0.6px;line-height:1}
+.featured-price-num{font-size:16px;font-weight:900;line-height:1.3}
+.featured-body{padding:28px}
+.featured-title{font-size:23px;font-weight:900;color:var(--texto);margin-bottom:4px;letter-spacing:-0.5px}
+.featured-location{font-size:13px;color:var(--texto2);font-weight:500;margin-bottom:20px}
+.featured-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.featured-features li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--texto2)}
+.featured-features li::before{content:'✓';color:#16A34A;font-weight:800;flex-shrink:0;margin-top:1px}
+.featured-amenities{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+.amenity-tag{background:var(--bg);border:1px solid var(--borde);color:var(--texto2);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px}
+.featured-cta{display:flex;gap:10px}
+.btn-fp{flex:1;background:var(--azul);color:white;padding:12px 16px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;text-align:center;transition:background 0.2s,transform 0.15s;display:flex;align-items:center;justify-content:center;gap:7px}
+.btn-fp:hover{background:var(--azul2);transform:translateY(-1px)}
+.btn-fs{background:var(--azul-claro);color:var(--azul);padding:12px 16px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;text-align:center;border:1px solid #BFDBFE;transition:background 0.2s;white-space:nowrap}
+.btn-fs:hover{background:#DBEAFE}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .hero-inner{grid-template-columns:1fr}
@@ -269,6 +295,7 @@ span[data-lang="en"]{display:none}
   .hamburger{display:flex}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
   .testimonials-grid{grid-template-columns:1fr}
+  .featured-grid{grid-template-columns:1fr}
   .compare-head div{font-size:12px;padding:14px 12px}
   .compare-row div{padding:12px;font-size:13px}
   .calc-row{grid-template-columns:1fr}
@@ -671,6 +698,109 @@ span[data-lang="en"]{display:none}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNIDADES DESTACADAS -->
+<section id="comunidades" style="padding:88px 24px;background:var(--bg)">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:52px" class="fade-up">
+      <div class="section-tag" data-lang="es" style="display:inline-block">Proyectos disponibles</div>
+      <div class="section-tag" data-lang="en" style="display:none">Available projects</div>
+      <h2 class="section-title" data-lang="es">Comunidades donde puedes comprar hoy</h2>
+      <h2 class="section-title" data-lang="en">Communities where you can buy today</h2>
+      <p class="section-sub" style="margin:0 auto" data-lang="es">Dos de las mejores comunidades nuevas del sur de Florida, con disponibilidad activa y los mejores incentivos del mercado.</p>
+      <p class="section-sub" style="margin:0 auto" data-lang="en">Two of the best new communities in South Florida, with active availability and the best incentives in the market.</p>
+    </div>
+    <div class="featured-grid">
+
+      <!-- Proyecto 1: DR Horton Victoria Parc -->
+      <div class="featured-card fade-up">
+        <div class="featured-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=85" alt="Victoria Parc at Tradition — DR Horton">
+          <div class="featured-img-overlay"></div>
+          <div class="featured-builder-badge">DR Horton</div>
+          <div class="featured-price-badge">
+            <span class="featured-price-label" data-lang="es">Desde</span>
+            <span class="featured-price-label" data-lang="en">From</span>
+            <span class="featured-price-num">$299,990</span>
+          </div>
+        </div>
+        <div class="featured-body">
+          <div class="featured-title">Victoria Parc at Tradition</div>
+          <div class="featured-location">📍 <span data-lang="es">Port St. Lucie, FL · Tradition Master Plan</span><span data-lang="en">Port St. Lucie, FL · Tradition Master Plan</span></div>
+          <ul class="featured-features">
+            <li data-lang="es">Casas unifamiliares de 3 a 5 habitaciones · hasta 2,800 sq ft</li>
+            <li data-lang="en">Single-family homes 3–5 bedrooms · up to 2,800 sq ft</li>
+            <li data-lang="es">Gastos de cierre cubiertos para compradores calificados</li>
+            <li data-lang="en">Closing costs covered for qualified buyers</li>
+            <li data-lang="es">Financiamiento propio DR Horton con tasas preferenciales</li>
+            <li data-lang="en">In-house DR Horton financing with preferred rates</li>
+            <li data-lang="es">Acceso a parques, piscinas y centros comerciales de Tradition</li>
+            <li data-lang="en">Access to parks, pools and Tradition shopping centers</li>
+          </ul>
+          <div class="featured-amenities">
+            <span class="amenity-tag">🏊 Piscina</span>
+            <span class="amenity-tag">🌳 Parques</span>
+            <span class="amenity-tag">🏫 A-rated Schools</span>
+            <span class="amenity-tag">🛍 Tradition Square</span>
+          </div>
+          <div class="featured-cta">
+            <a href="https://wa.me/15616330872?text=Hola%20Raquel%2C%20quiero%20info%20sobre%20Victoria%20Parc%20at%20Tradition" target="_blank" class="btn-fp">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <span data-lang="es">Me interesa</span>
+              <span data-lang="en">I'm interested</span>
+            </a>
+            <a href="https://wa.me/15616330872?text=Hola%20Raquel%2C%20quiero%20agendar%20visita%20a%20Victoria%20Parc" target="_blank" class="btn-fs" data-lang="es">Visitar →</a>
+            <a href="https://wa.me/15616330872?text=Hi%20Raquel%2C%20I%20want%20to%20schedule%20a%20visit%20to%20Victoria%20Parc" target="_blank" class="btn-fs" data-lang="en" style="display:none">Visit →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2: Lennar Brystol at Wylder -->
+      <div class="featured-card fade-up fade-up-delay-1">
+        <div class="featured-img-wrap">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=85" alt="Brystol at Wylder — Lennar">
+          <div class="featured-img-overlay"></div>
+          <div class="featured-builder-badge" style="color:#1B4332">Lennar</div>
+          <div class="featured-price-badge" style="background:linear-gradient(135deg,#1B4332,#2D6A4F)">
+            <span class="featured-price-label" data-lang="es">Desde</span>
+            <span class="featured-price-label" data-lang="en">From</span>
+            <span class="featured-price-num">$363,990</span>
+          </div>
+        </div>
+        <div class="featured-body">
+          <div class="featured-title">Brystol at Wylder</div>
+          <div class="featured-location">📍 <span data-lang="es">Port St. Lucie, FL · Wylder Master Plan</span><span data-lang="en">Port St. Lucie, FL · Wylder Master Plan</span></div>
+          <ul class="featured-features">
+            <li data-lang="es">Casas de 3 a 6 habitaciones · 1,619 – 2,896 sq ft · 1 y 2 pisos</li>
+            <li data-lang="en">3–6 bedrooms · 1,619 – 2,896 sq ft · 1 & 2 stories</li>
+            <li data-lang="es">Everything's Included® — acabados premium sin costo adicional</li>
+            <li data-lang="en">Everything's Included® — premium finishes at no extra cost</li>
+            <li data-lang="es">Smart home technology de serie en todos los modelos</li>
+            <li data-lang="en">Smart home technology standard in all models</li>
+            <li data-lang="es">Cerca de Cleveland Clinic, I-95 y playas del Treasure Coast</li>
+            <li data-lang="en">Close to Cleveland Clinic, I-95 and Treasure Coast beaches</li>
+          </ul>
+          <div class="featured-amenities">
+            <span class="amenity-tag">🏊 Clubhouse & Pool</span>
+            <span class="amenity-tag">💪 Fitness Center</span>
+            <span class="amenity-tag">🎾 Pickleball</span>
+            <span class="amenity-tag">🌲 Wooded Trails</span>
+          </div>
+          <div class="featured-cta">
+            <a href="https://wa.me/15616330872?text=Hola%20Raquel%2C%20quiero%20info%20sobre%20Brystol%20at%20Wylder%20de%20Lennar" target="_blank" class="btn-fp" style="background:linear-gradient(135deg,#1B4332,#2D6A4F)">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <span data-lang="es">Me interesa</span>
+              <span data-lang="en">I'm interested</span>
+            </a>
+            <a href="https://wa.me/15616330872?text=Hola%20Raquel%2C%20quiero%20agendar%20visita%20a%20Brystol%20at%20Wylder" target="_blank" class="btn-fs" data-lang="es">Visitar →</a>
+            <a href="https://wa.me/15616330872?text=Hi%20Raquel%2C%20I%20want%20to%20visit%20Brystol%20at%20Wylder" target="_blank" class="btn-fs" data-lang="en" style="display:none">Visit →</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
